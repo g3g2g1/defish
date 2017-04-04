@@ -57,8 +57,8 @@ int main(int argc, char *argv[])
   int maxmag = (midy > midx ? midy : midx);
   int circum = 2 * M_PI * maxmag;     // c = 2*pi*r
 
-  // 上黑边的宽度
-  int incheight = maxmag;  //新宽度：circum 新高度：maxmag*2
+  // width for upper black edge
+  int incheight = 1;  //new width：circum; new heignt：maxmag*2
   int newheight = maxmag + incheight;
 
   printf("P6\n");
@@ -67,14 +67,14 @@ int main(int argc, char *argv[])
   
   char black[3] = {0,0,0};
 
-  //写入黑边
+  //write black edge
   for (int i = 0; i < incheight; i++){
     for(int j = 0; j < circum; j++){
       fwrite(black, 1, 3, stdout);
     }
   }
 
-  //写入图像数据
+  //write image data
   for (int y = 0; y < maxmag; y++) {
     for (int x = 0; x < circum; x++) {
       double theta = -1.0 * x / maxmag;       // -(x * 2.0 * M_PI / width);
