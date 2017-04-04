@@ -68,9 +68,10 @@ int main(int argc, char *argv[])
   char black[3] = {0,0,0};
 
   //写入黑边
-  for (int i = 0; i < incheight; i++)
-  {
-    fwrite(black, 1, 3, stdout);    
+  for (int i = 0; i < incheight; i++){
+    for(int j = 0; j < circum; j++){
+      fwrite(black, 1, 3, stdout);
+    }
   }
 
   //写入图像数据
