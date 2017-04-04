@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
   int circum = 2 * M_PI * maxmag;     // c = 2*pi*r
 
   // width for upper black edge
-  int incheight = 1;  //new width：circum; new heignt：maxmag*2
+  int incheight = maxmag;  //new width：circum; new heignt：maxmag*2
   int newheight = maxmag + incheight;
 
   printf("P6\n");
